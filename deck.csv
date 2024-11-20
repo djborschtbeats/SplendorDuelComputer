@@ -1,0 +1,72 @@
+"Level","Points","Feature","Requirements","Output","Crowns" 
+0,0,"Go Again","2G2R1P","1B",0
+0,1,"None","2G3R","1W",0
+0,0,"Go Again","2R2K1P","1G",0
+0,0,"Go Again","2B2G1P","1W",0
+0,0,"Go Again","2W2K1P","1R",0
+0,0,"None","1B1G1R1K","1W",0
+0,0,"Wildcolor","4W1P","1*",1
+0,1,"Wildcolor","4K1P","1*",0
+0,1,"Wildcolor","2B2R1K1P","1*",0
+0,1,"Wildcolor","2W2G1K1P","1*",0
+0,0,"None","1W1B1R1K","1G",0
+0,0,"None","1W1G1R1K","1B",0
+0,0,"None","1W1B1G1R","1K",0
+0,0,"None","1W1B1G1K","1R",0
+0,1,"None","3R","1G",1
+0,1,"None","3G","1B",1
+0,1,"None","3W","1K",1
+0,1,"None","3B","1W",1
+0,1,"None","3K","1R",1
+0,0,"Buy One Get One","2B2G","1R",0
+0,0,"Go Again","2W2B1P","1K",0
+0,0,"Buy One Get One","2G2R","1K",0
+0,0,"Buy One Get One","2W2K","1B",0
+0,0,"Buy One Get One","2W2B","1G",0
+0,0,"Buy One Get One","2R2K","1W",0
+0,1,"None","2R2K","1B",0
+0,1,"None","3W2K","1G",0
+0,1,"None","2B3G","1K",0
+0,1,"None","2W3B","1R",0
+0,3,"None","4R1P","None",0
+1,1,"Steal","4G3K","1B",0
+1,1,"Steal","4B3R","1W",0
+1,1,"Steal","4W3G","1K",0
+1,2,"Privilege","2G4R1P","1R",0
+1,2,"Privilege","2W4B1P","1B",0
+1,2,"Privilege","2B4G1P","1G",0
+1,2,"Privilege","4W2K1P","1W",0
+1,2,"Privilege","2R4K1P","1K",0
+1,1,"None","5W2B","2K",0
+1,1,"None","2W5K","2R",0
+1,1,"None","5R2K","2G",0
+1,1,"None","5G2R","2B",0
+1,1,"None","5B2G","2W",0
+1,0,"Wildcolor","6B1P","1*",2
+1,0,"Wildcolor","6G1P","1*",2
+1,2,"Wildcolor","6G1P","1*",0
+1,2,"None","2W2B2G1P","1R",1
+1,2,"None","2G2R2K1P","1W",1
+1,2,"None","2W2B2K1P","1G",1
+1,2,"None","2B2G2R1P","1K",1
+1,2,"None","2W2R2K1P","1B",1
+1,1,"Steal","3B4K","1R",0
+1,1,"Steal","3W4R","1G",0
+1,5,"None","6B1P","None",0
+2,6,"None","8W","None",0
+2,4,"None","2W6B2G","1B",0
+2,4,"None","2B6W2K","1W",0
+2,4,"None","2B6G2R","1G",0
+2,4,"None","2W2R6K","1K",0
+2,4,"None","2G2K6R","1R",0
+2,3,"None","5W3B3R1P","1G",2
+2,3,"None","5G3W3R1P","1K",2
+2,3,"None","5K3W3G1P","1B",2
+2,3,"None","5R3B3K1P","1W",2
+2,3,"None","5B3G3K1P","1R",2
+2,3,"Go Again","8R","1*",0
+2,0,"Wildcolor","8K","1*",3
+
+
+
+
