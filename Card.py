@@ -1,5 +1,3 @@
-from Deck import *
-
 import csv
 import random
 from collections import defaultdict, namedtuple
@@ -164,16 +162,3 @@ class Card:
         # Save the image
         image.save(output_path)
         print(f"Card graphic saved to {output_path}")
-
-
-def __main__():
-    # Create a Deck object by passing the CSV file name
-    #deck = Deck('deck.csv')
-
-    # Display the deck contents
-    #deck.display_deck()
-
-    test_deck()
-
-if __name__ == '__main__':
-    __main__()
