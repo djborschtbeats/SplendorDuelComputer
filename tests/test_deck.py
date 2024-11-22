@@ -1,10 +1,14 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from components.card import *
 from components.deck import *
 
 
 def test_deck():
     # Step 1: Create and load the deck from a sample CSV file
-    deck = Deck('../deck.csv')  # Replace 'cards.csv' with the actual path to your file
+    deck = Deck('resources/deck/deck.csv')  # Replace 'cards.csv' with the actual path to your file
     print("\n--- Loaded Deck ---")
     deck.display_deck()
     
