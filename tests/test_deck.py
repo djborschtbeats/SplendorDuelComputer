@@ -1,9 +1,9 @@
-from Card import *
-from Deck import *
+from components.card import *
+from components.deck import *
 
 def test_deck():
     # Step 1: Create and load the deck from a sample CSV file
-    deck = Deck('deck.csv')  # Replace 'cards.csv' with the actual path to your file
+    deck = Deck('../deck.csv')  # Replace 'cards.csv' with the actual path to your file
     print("\n--- Loaded Deck ---")
     deck.display_deck()
     

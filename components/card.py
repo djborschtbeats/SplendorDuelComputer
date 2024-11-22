@@ -131,7 +131,8 @@ class Card:
         if self.crowns > 0: 
             # Load crown image
             try:
-                crown_image = Image.open("Images/CardIcons/crown.png").convert("RGBA")
+                crown_image = Image.open(
+                    "../images/card_icons/crown.png").convert("RGBA")
                 crown_width, crown_height = 40, 40  # Resize crowns to fit
                 crown_image = crown_image.resize((crown_width, crown_height))
             except IOError:

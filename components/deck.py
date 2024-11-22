@@ -1,4 +1,4 @@
-from Card import *
+from components.card import *
 
 import csv
 import random
