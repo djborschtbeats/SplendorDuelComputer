@@ -1,6 +1,7 @@
 from components.card import *
 from components.deck import *
 
+
 def test_deck():
     # Step 1: Create and load the deck from a sample CSV file
     deck = Deck('../deck.csv')  # Replace 'cards.csv' with the actual path to your file
@@ -32,14 +33,6 @@ def test_deck():
     print("\n--- Remaining Piles ---")
     deck.display_piles()
 
-def __main__():
-    # Create a Deck object by passing the CSV file name
-    #deck = Deck('deck.csv')
-
-    # Display the deck contents
-    #deck.display_deck()
-
-    test_deck()
 
 if __name__ == '__main__':
-    __main__()
+    test_deck()
