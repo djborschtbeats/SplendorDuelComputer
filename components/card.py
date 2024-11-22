@@ -3,19 +3,7 @@ import random
 from collections import defaultdict, namedtuple
 from PIL import Image, ImageDraw, ImageFont
 
-# Define a namedtuple for clarity
-Token = namedtuple('Token', ['color', 'quantity'])
-
-# Mapping of token abbreviations to full color names
-TOKENS_COLORS = {
-    'R': 'red',
-    'G': 'green',
-    'B': 'blue',
-    'K': 'black',
-    'P': 'purple',
-    'W': 'white',
-    '*': 'yellow' 
-}
+from components.token import * 
 
 class Card:
     def __init__(self, level, points, feature, requirements, output, crowns):
@@ -42,18 +30,19 @@ class Card:
             List[Token]: A list of Token namedtuples with color and quantity.
         """
         tokens = []
-        quantity = ''
+        quantity = 0
 
         if requirements.lower() == "None".lower():
             return None
 
         for char in requirements:
             if char.isdigit():
-                quantity += char  # Accumulate digits for the quantity
-            elif char in TOKENS_COLORS:
-                if quantity:  # If there's an accumulated quantity
-                    tokens.append(Token(color=TOKENS_COLORS[char], quantity=int(quantity)))
-                    quantity = ''  # Reset quantity for next token
+                quantity += int(char)  # Accumulate digits for the quantity
+            elif char in Token.ABBREVIATIONS:
+                if quantity > 0:  # If there's an accumulated quantity
+                    for i in range(quantity-1):
+                        tokens.append(Token(color=char))
+                    quantity = 0 # Reset quantity for next token
                 else:
                     raise ValueError("Invalid format: quantity missing before color.")
             else:
