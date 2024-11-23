@@ -20,7 +20,7 @@ class Card:
                f"\tFeature: {self.feature}, \n" \
                f"\tRequirements: {self.requirements}, \n" \
                f"\tOutput: {self.output}\n"
-               
+
     def parse_tokens(self, requirements):
         """
         Parses a requirements dictionary into a list of Token namedtuples.
@@ -35,11 +35,11 @@ class Card:
             return None  # Handle cases where requirements are empty or None
 
         for color, quantity in requirements.items():
-            if color not in Token.COLORS:
-                raise ValueError(f"Unknown token color: {color}")
+            if color not in Token.__members__:
+                raise ValueError(f"Unknown token color: {color.__name__}")
 
             for _ in range(quantity):
-                tokens.append(Token(color=color))
+                tokens.append(Token[color])
 
         return tokens
         
