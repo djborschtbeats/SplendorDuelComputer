@@ -1,5 +1,6 @@
 from components.card import *
 
+import json
 import csv
 import random
 from collections import defaultdict, namedtuple
@@ -11,28 +12,28 @@ class Deck:
         self.piles = defaultdict(list)  # Dictionary to hold shuffled piles by level
 
     def load_deck(self, filename):
-        """Reads a CSV file and creates Card objects"""
+        """Reads a JSON file and creates Card objects"""
         try:
             with open(filename, 'r') as file:
-                reader = csv.reader(file)
-                header = next(reader)  # Skip the header row
-                for row in reader:
-                    if row:  # Skip any empty rows
-                        # Extract information from the CSV row
-                        # "Level","Points","Feature","Requirements","Output","Crowns" 
-                        level = int(row[0])
-                        points = int(row[1])
-                        feature = row[2]
-                        requirements = row[3] 
-                        output = row[4]  # Permanent token if applicable
-                        crowns = int(row[5])
+                data = json.load(file)  # Load JSON data
 
-                        # Create a Card object and add it to the list of cards
-                        card = Card(level, points, feature, requirements, output, crowns)
-                        print(f"card: {card}")
-                        self.cards.append(card)
+                for item in data:
+                    # Extract information from the JSON object
+                    level = item['Level']
+                    points = item['Points']
+                    feature = item['Feature']
+                    requirements = item['Requirements']
+                    output = item['Output']
+                    crowns = item['Crowns']
+
+                    # Create a Card object and add it to the list of cards
+                    card = Card(level, points, feature, requirements, output, crowns)
+                    print(f"card: {card}")
+                    self.cards.append(card)
         except FileNotFoundError:
             print(f"Error: The file {filename} was not found.")
+        except json.JSONDecodeError:
+            print(f"Error: The file {filename} contains invalid JSON.")
         except Exception as e:
             print(f"An error occurred: {e}")
 

@@ -8,7 +8,7 @@ from components.deck import *
 
 def test_deck():
     # Step 1: Create and load the deck from a sample CSV file
-    deck = Deck('resources/deck/deck.csv')  # Replace 'cards.csv' with the actual path to your file
+    deck = Deck('resources/deck/deck.json')
     print("\n--- Loaded Deck ---")
     deck.display_deck()
     

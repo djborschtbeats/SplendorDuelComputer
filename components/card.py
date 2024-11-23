@@ -20,35 +20,29 @@ class Card:
                f"\tFeature: {self.feature}, \n" \
                f"\tRequirements: {self.requirements}, \n" \
                f"\tOutput: {self.output}\n"
-
+               
     def parse_tokens(self, requirements):
         """
-        Parses a requirements string into a list of Token namedtuples.
+        Parses a requirements dictionary into a list of Token namedtuples.
         Args:
-            requirements (str): The requirements string (e.g., "2G3R").
+            requirements (dict): The requirements dictionary (e.g., {"red": 2, "green": 3}).
         Returns:
             List[Token]: A list of Token namedtuples with color and quantity.
         """
         tokens = []
-        quantity = 0
 
-        if requirements.lower() == "None".lower():
-            return None
+        if not requirements:
+            return None  # Handle cases where requirements are empty or None
 
-        for char in requirements:
-            if char.isdigit():
-                quantity += int(char)  # Accumulate digits for the quantity
-            elif char in Token.ABBREVIATIONS:
-                if quantity > 0:  # If there's an accumulated quantity
-                    for i in range(quantity-1):
-                        tokens.append(Token(color=char))
-                    quantity = 0 # Reset quantity for next token
-                else:
-                    raise ValueError("Invalid format: quantity missing before color.")
-            else:
-                raise ValueError(f"Unknown token color code: {char}")
+        for color, quantity in requirements.items():
+            if color not in Token.COLORS:
+                raise ValueError(f"Unknown token color: {color}")
+
+            for _ in range(quantity):
+                tokens.append(Token(color=color))
+
         return tokens
-    
+        
     def _draw_border_text(self, draw, x, y, _text, _font, offset=2):
         """
         Draws text with a black border and white fill.
