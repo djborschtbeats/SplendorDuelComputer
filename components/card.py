@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from typing import Optional
 
-from components.token import Token
+from components.t0ken import Token
 
 
 class Card:

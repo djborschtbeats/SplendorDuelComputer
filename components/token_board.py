@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from random import shuffle
 from typing import Optional
 
-from components.token import Token
+from components.t0ken import Token
 from components.token_bag import TokenBag
 
 

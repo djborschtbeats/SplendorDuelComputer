@@ -1,4 +1,4 @@
-from components.token import Token
+from components.t0ken import Token
 
 
 class TokenBag:
