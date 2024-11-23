@@ -2,17 +2,14 @@ from components.deck import *
 
 
 def test_deck():
-    # Step 1: Create and load the deck from a sample CSV file
+    # Step 1: Create the deck and its level-specific piles from a JSON spec file
     deck = Deck('../resources/deck/deck.json')
     print("\n--- Loaded Deck ---")
     deck.display_deck()
-    
-    # Step 2: Shuffle the deck into piles by level
-    deck.shuffle()
     print("\n--- Shuffled Piles ---")
     deck.display_piles()
 
-    # Step 3: Deal cards
+    # Step 2: Deal cards
     level_0_cards = deck.deal(level=0, num_cards=5)
     level_1_cards = deck.deal(level=1, num_cards=4)
     level_2_cards = deck.deal(level=2, num_cards=3)
@@ -28,7 +25,7 @@ def test_deck():
     for card in level_2_cards: 
         print(f"{card}")
 
-    # Step 4: Display remaining piles
+    # Step 3: Display remaining piles
     print("\n--- Remaining Piles ---")
     deck.display_piles()
 

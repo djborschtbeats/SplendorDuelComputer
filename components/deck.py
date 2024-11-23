@@ -1,45 +1,34 @@
-from components.card import *
-
 import json
-import csv
-import random
-from collections import defaultdict, namedtuple
+from collections import defaultdict
+from random import shuffle
+
+from components.card import Card
+
 
 class Deck:
-    def __init__(self, filename):
-        self.cards = []  # Initialize an empty list of cards
-        self.load_deck(filename)        
-        self.piles = defaultdict(list)  # Dictionary to hold shuffled piles by level
+    def __init__(self, card_spec_file_path: str) -> None:
+        self.deck: list[Card] = self.load_card_specs(card_spec_file_path)
+        self.piles: dict[int, list[Card]] = self.load_piles()
+        self.active_cards: dict[int, list[Card]] = {}
 
-    def load_deck(self, filename):
-        """Reads a JSON file and creates Card objects"""
-        try:
-            with open(filename, 'r') as file:
-                data = json.load(file)  # Load JSON data
+    def load_card_specs(self, card_spec_file_path: str) -> list[Card]:
+        """Parse cards and their properties from JSON file,"""
+        with open(card_spec_file_path, "r") as file:
+            return [Card(**item) for item in json.load(file)]
 
-                for item in data:
-                    # Extract information from the JSON object
-                    card = Card(**item)
-                    print(f"card: {card}")
-                    self.cards.append(card)
-        except FileNotFoundError:
-            print(f"Error: The file {filename} was not found.")
-        except json.JSONDecodeError:
-            print(f"Error: The file {filename} contains invalid JSON.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
+    def load_piles(self) -> dict[int, list[Card]]:
+        """Shuffle cards and separate them into piles by level."""
+        shuffle(self.deck)
+        piles = defaultdict(list)
+        for card in self.deck:
+            piles[card.level].append(card)  # TODO: validate level values
+        return dict(piles)
 
+    # TODO: Clean up/add typehints from here on
     def display_deck(self):
         """Print all the cards in the deck"""
-        for card in self.cards:
+        for card in self.deck:
             print(card)
-
-    def shuffle(self):
-        """Shuffle cards into piles by level"""
-        self.piles.clear()  # Clear previous piles
-        random.shuffle(self.cards)  # Shuffle all cards
-        for card in self.cards:
-            self.piles[card.level].append(card)  # Add to the appropriate level pile
 
     def deal(self, level, num_cards):
         """Deal a number of cards from the top of the pile of a specific level"""
@@ -68,11 +57,6 @@ class Deck:
         else:
             print(f"No cards left in level {level}.")
             return None
-
-    def display_deck(self):
-        """Print all the cards in the deck"""
-        for card in self.cards:
-            print(str(card))
 
     def display_piles(self):
         """Print the piles by level"""

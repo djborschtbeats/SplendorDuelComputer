@@ -1,12 +1,19 @@
-import csv
-import random
-from collections import defaultdict, namedtuple
 from PIL import Image, ImageDraw, ImageFont
+from typing import Optional
 
-from components.token import * 
+from components.token import Token
+
 
 class Card:
-    def __init__(self, level, points, feature, requirements, output, crowns):
+    def __init__(
+        self,
+        level: int,
+        points: int,
+        feature: Optional[str] = None,  # TODO: features are limited, could be an Enum
+        requirements: Optional[dict[str, int]] = None,
+        output: Optional[dict[str, int]] = None,
+        crowns: int = 0,
+    ) -> None:
         self.level = level
         self.points = points
         self.feature = feature
@@ -14,35 +21,43 @@ class Card:
         self.output = self.parse_tokens(output)
         self.crowns = crowns
 
-    def __str__(self):
-        return f"Card: " \
-               f"\tLevel: {self.level}, Points: {self.points}, Crowns: {self.crowns}, \n" \
-               f"\tFeature: {self.feature}, \n" \
-               f"\tRequirements: {self.requirements}, \n" \
-               f"\tOutput: {self.output}\n"
+    def __str__(self) -> str:
+        def token_str(tokens: Optional[list[Token]]) -> str:
+            return ", ".join(token.name for token in tokens) if tokens else "None"
 
-    def parse_tokens(self, requirements):
+        return f"Card: " \
+               f"\tLevel: {self.level}" \
+               f"\tPoints: {self.points}, Crowns: {self.crowns}, \n" \
+               f"\tFeature: {self.feature} \n" \
+               f"\tRequirements: {token_str(self.requirements)} \n" \
+               f"\tOutput: {token_str(self.output)}\n"
+
+    def parse_tokens(
+        self, token_quantities: Optional[dict[str, int]] = None
+    ) -> Optional[list[Token]]:
         """
-        Parses a requirements dictionary into a list of Token namedtuples.
+        Parses a dict of token colors and quantities into a list of tokens.
+
         Args:
-            requirements (dict): The requirements dictionary (e.g., {"red": 2, "green": 3}).
+            token_quantities: Dictionary of token color string to quantity,
+            e.g. {"red": 2, "green": 3}
+
         Returns:
-            List[Token]: A list of Token namedtuples with color and quantity.
+            a list of Token enums
         """
+        if not token_quantities:
+            return
+
         tokens = []
 
-        if not requirements:
-            return None  # Handle cases where requirements are empty or None
-
-        for color, quantity in requirements.items():
+        for color, quantity in token_quantities.items():
             if color not in Token.__members__:
                 raise ValueError(f"Unknown token color: {color.__name__}")
-
-            for _ in range(quantity):
-                tokens.append(Token[color])
+            tokens.extend([Token[color]] * quantity)
 
         return tokens
-        
+
+    # TODO: Clean up/add typehints from here on
     def _draw_border_text(self, draw, x, y, _text, _font, offset=2):
         """
         Draws text with a black border and white fill.
@@ -81,7 +96,6 @@ class Card:
         # Card dimensions
         width, height = 400, 600
         background_color = "grey"
-        text_color = "white"
 
         # Fonts
         try:
