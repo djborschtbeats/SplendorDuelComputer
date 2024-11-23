@@ -2,7 +2,7 @@ import matplotlib.colors as mcolors
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 
-from token_board import TokenBoard
+from components.token_board import TokenBoard
 
 
 def visualize_token_board(token_board: TokenBoard) -> None:

@@ -1,4 +1,4 @@
-from token import Token
+from components.token import Token
 
 
 class TokenBag:
@@ -6,7 +6,7 @@ class TokenBag:
         self.tokens: list[Token] = self._fill_with_tokens()
 
     @staticmethod
-    def _fill_with_tokens(self) -> list[Token]:
+    def _fill_with_tokens() -> list[Token]:
         tokens = []
         for t in Token:
             if t == Token.purple:

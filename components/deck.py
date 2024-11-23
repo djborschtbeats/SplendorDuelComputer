@@ -13,7 +13,7 @@ class Deck:
 
     @staticmethod
     def _load_card_specs(card_spec_file_path: str) -> list[Card]:
-        """Parse cards and their properties from JSON file,"""
+        """Parse cards and their properties from JSON file."""
         with open(card_spec_file_path, "r") as file:
             return [Card(**item) for item in json.load(file)]  # todo: validate levels
 
@@ -26,7 +26,7 @@ class Deck:
         return dict(piles)
 
     def _load_active_cards(self) -> dict[int, list[Card]]:
-        """Deal playable cards to start per level"""
+        """Deal playable cards to start per level."""
         return {
             level: [
                 self.piles[level].pop()
@@ -37,7 +37,7 @@ class Deck:
 
     @staticmethod
     def _get_max_card_count(level: int) -> int:
-        return 5 - level
+        return 5 - level  # 5 cards for level 0; 4 for level 1; 3 for level 2
 
     @staticmethod
     def display_cards(cards: list[Card]) -> None:

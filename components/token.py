@@ -6,6 +6,6 @@ class Token(Enum):
     blue = "#0000FF"
     green = "#00FF00"
     red = "#FF0000"
-    black = "#FFFFFFF"
+    black = "#FFFFFF"
     purple = "#800080"
     gold = "#FFFF00"

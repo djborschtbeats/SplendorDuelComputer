@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Player:
     def __init__(self, name):
         self.name = name

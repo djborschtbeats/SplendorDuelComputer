@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from random import shuffle
 from typing import Optional
 
-from token import Token
-from token_bag import TokenBag
+from components.token import Token
+from components.token_bag import TokenBag
 
 
 @dataclass
@@ -24,7 +24,14 @@ class TokenBoard:
             for x in range(5)
         ]
 
-    def replenish(self, token_bag: TokenBag) -> TokenBag:
+    def _get_field(self, coord: tuple[int, int]) -> TokenBoardField:
+        x, y = coord
+        if not (1 <= x <= 5) or not (1 <= y <= 5):
+            raise ValueError(f"Coordinates {x}, {y} are out of bounds (1-5)")
+        return self.fields[x - 1][y - 1]
+
+    # TODO: attach TokenBag instance to TokenBoard instead?
+    def replenish(self, token_bag: TokenBag):
         shuffle(token_bag.tokens)
 
         for coord in BOARD_REPLENISH_ORDER:
@@ -36,14 +43,8 @@ class TokenBoard:
                     print("No tokens left in the bag.")
                     break
 
-        print(self.fields)  # TODO: for temporary QA, remove
-        return token_bag
-
-    def _get_field(self, coord: tuple[int, int]) -> TokenBoardField:
-        x, y = coord
-        if not (1 <= x <= 5) or not (1 <= y <= 5):
-            raise ValueError(f"Coordinates {x}, {y} are out of bounds (1-5)")
-        return self.fields[x - 1][y - 1]
+    def display(self) -> None:
+        print(f"\n--- Token Board ---\n{self.fields}")
 
 
 BOARD_REPLENISH_ORDER = [
