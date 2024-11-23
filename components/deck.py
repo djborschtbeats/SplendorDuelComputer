@@ -10,7 +10,6 @@ class Deck:
         self.load_deck(filename)        
         self.piles = defaultdict(list)  # Dictionary to hold shuffled piles by level
 
-
     def load_deck(self, filename):
         """Reads a CSV file and creates Card objects"""
         try:

@@ -24,7 +24,6 @@ class Token:
     def __init__(self, color):
         if (color not in Token.COLORS) and (color not in Token.ABBREVIATIONS):
             raise ValueError(f"Invalid token color: {color}")
-        print(f"len of color: {len(color)}")
         if len(color) == 1: 
             color = self.ABBREVIATIONS[color]
         self.color = color
