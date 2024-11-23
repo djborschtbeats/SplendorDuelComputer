@@ -1,908 +1,908 @@
 [
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Go Again",
+        "requirements": {
             "green": 2,
             "red": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "green": 2,
             "red": 3
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Go Again",
+        "requirements": {
             "red": 2,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Go Again",
+        "requirements": {
             "blue": 2,
             "green": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Go Again",
+        "requirements": {
             "white": 2,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "None",
+        "requirements": {
             "blue": 1,
             "green": 1,
             "red": 1,
             "black": 1
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Wildcolor",
+        "requirements": {
             "white": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "Wildcolor",
+        "requirements": {
             "black": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "Wildcolor",
+        "requirements": {
             "blue": 2,
             "red": 2,
             "black": 1,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "Wildcolor",
+        "requirements": {
             "white": 2,
             "green": 2,
             "black": 1,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "None",
+        "requirements": {
             "white": 1,
             "blue": 1,
             "red": 1,
             "black": 1
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "None",
+        "requirements": {
             "white": 1,
             "green": 1,
             "red": 1,
             "black": 1
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "None",
+        "requirements": {
             "white": 1,
             "blue": 1,
             "green": 1,
             "red": 1
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "None",
+        "requirements": {
             "white": 1,
             "blue": 1,
             "green": 1,
             "black": 1
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "red": 3
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "green": 3
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "white": 3
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "blue": 3
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "black": 3
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Buy One Get One",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Buy One Get One",
+        "requirements": {
             "blue": 2,
             "green": 2
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Go Again",
+        "requirements": {
             "white": 2,
             "blue": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Buy One Get One",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Buy One Get One",
+        "requirements": {
             "green": 2,
             "red": 2
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Buy One Get One",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Buy One Get One",
+        "requirements": {
             "white": 2,
             "black": 2
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Buy One Get One",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Buy One Get One",
+        "requirements": {
             "white": 2,
             "blue": 2
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 0,
-        "Feature": "Buy One Get One",
-        "Requirements": {
+        "level": 0,
+        "points": 0,
+        "feature": "Buy One Get One",
+        "requirements": {
             "red": 2,
             "black": 2
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "red": 2,
             "black": 2
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "white": 3,
             "black": 2
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "blue": 2,
             "green": 3
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "blue": 3
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 0,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 0,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "red": 4,
             "purple": 1
         },
-        "Output": {},
-        "Crowns": 0
+        "output": {},
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "Steal",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "Steal",
+        "requirements": {
             "green": 4,
             "black": 3
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "Steal",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "Steal",
+        "requirements": {
             "blue": 4,
             "red": 3
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "Steal",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "Steal",
+        "requirements": {
             "white": 4,
             "green": 3
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Privilege",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Privilege",
+        "requirements": {
             "green": 2,
             "red": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Privilege",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Privilege",
+        "requirements": {
             "white": 2,
             "blue": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Privilege",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Privilege",
+        "requirements": {
             "blue": 2,
             "green": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Privilege",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Privilege",
+        "requirements": {
             "white": 4,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Privilege",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Privilege",
+        "requirements": {
             "red": 2,
             "black": 4,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "white": 5,
             "blue": 2
         },
-        "Output": {
+        "output": {
             "black": 2
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "black": 5
         },
-        "Output": {
+        "output": {
             "red": 2
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "red": 5,
             "black": 2
         },
-        "Output": {
+        "output": {
             "green": 2
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "green": 5,
             "red": 2
         },
-        "Output": {
+        "output": {
             "blue": 2
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "None",
+        "requirements": {
             "blue": 5,
             "green": 2
         },
-        "Output": {
+        "output": {
             "white": 2
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 0,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 1,
+        "points": 0,
+        "feature": "Wildcolor",
+        "requirements": {
             "blue": 6,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 1,
-        "Points": 0,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 1,
+        "points": 0,
+        "feature": "Wildcolor",
+        "requirements": {
             "green": 6,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "Wildcolor",
+        "requirements": {
             "green": 6,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "blue": 2,
             "green": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "None",
+        "requirements": {
             "green": 2,
             "red": 2,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "blue": 2,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "None",
+        "requirements": {
             "blue": 2,
             "green": 2,
             "red": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 1,
-        "Points": 2,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 2,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "red": 2,
             "black": 2,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 1
+        "crowns": 1
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "Steal",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "Steal",
+        "requirements": {
             "blue": 3,
             "black": 4
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 1,
-        "Feature": "Steal",
-        "Requirements": {
+        "level": 1,
+        "points": 1,
+        "feature": "Steal",
+        "requirements": {
             "white": 3,
             "red": 4
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 1,
-        "Points": 5,
-        "Feature": "None",
-        "Requirements": {
+        "level": 1,
+        "points": 5,
+        "feature": "None",
+        "requirements": {
             "blue": 6,
             "purple": 1
         },
-        "Output": {},
-        "Crowns": 0
+        "output": {},
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 6,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 6,
+        "feature": "None",
+        "requirements": {
             "white": 8
         },
-        "Output": {},
-        "Crowns": 0
+        "output": {},
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 4,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 4,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "blue": 6,
             "green": 2
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 4,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 4,
+        "feature": "None",
+        "requirements": {
             "blue": 2,
             "white": 6,
             "black": 2
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 4,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 4,
+        "feature": "None",
+        "requirements": {
             "blue": 2,
             "green": 6,
             "red": 2
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 4,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 4,
+        "feature": "None",
+        "requirements": {
             "white": 2,
             "red": 2,
             "black": 6
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 4,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 4,
+        "feature": "None",
+        "requirements": {
             "green": 2,
             "black": 2,
             "red": 6
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "white": 5,
             "blue": 3,
             "red": 3,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "green": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "green": 5,
             "white": 3,
             "red": 3,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "black": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "black": 5,
             "white": 3,
             "green": 3,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "blue": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "red": 5,
             "blue": 3,
             "black": 3,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "white": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "None",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "None",
+        "requirements": {
             "blue": 5,
             "green": 3,
             "black": 3,
             "purple": 1
         },
-        "Output": {
+        "output": {
             "red": 1
         },
-        "Crowns": 2
+        "crowns": 2
     },
     {
-        "Level": 2,
-        "Points": 3,
-        "Feature": "Go Again",
-        "Requirements": {
+        "level": 2,
+        "points": 3,
+        "feature": "Go Again",
+        "requirements": {
             "red": 8
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 0
+        "crowns": 0
     },
     {
-        "Level": 2,
-        "Points": 0,
-        "Feature": "Wildcolor",
-        "Requirements": {
+        "level": 2,
+        "points": 0,
+        "feature": "Wildcolor",
+        "requirements": {
             "black": 8
         },
-        "Output": {
+        "output": {
             "gold": 1
         },
-        "Crowns": 3
+        "crowns": 3
     }
 ]

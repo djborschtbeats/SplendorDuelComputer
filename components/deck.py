@@ -19,15 +19,7 @@ class Deck:
 
                 for item in data:
                     # Extract information from the JSON object
-                    level = item['Level']
-                    points = item['Points']
-                    feature = item['Feature']
-                    requirements = item['Requirements']
-                    output = item['Output']
-                    crowns = item['Crowns']
-
-                    # Create a Card object and add it to the list of cards
-                    card = Card(level, points, feature, requirements, output, crowns)
+                    card = Card(**item)
                     print(f"card: {card}")
                     self.cards.append(card)
         except FileNotFoundError:

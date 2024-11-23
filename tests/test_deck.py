@@ -1,7 +1,3 @@
-import sys
-import os
-
-from components.card import *
 from components.deck import *
 
 
@@ -24,13 +20,13 @@ def test_deck():
     print("\n--- Dealt Cards ---")
     print(f"Level 0: {len(level_0_cards)} \n")
     for card in level_0_cards: 
-        print(f"{str(card)}")
+        print(f"{card}")
     print(f"Level 1: {len(level_1_cards)} \n")
     for card in level_1_cards: 
-        print(f"{str(card)}")
+        print(f"{card}")
     print(f"Level 2: {len(level_2_cards)} \n")
     for card in level_2_cards: 
-        print(f"{str(card)}")
+        print(f"{card}")
 
     # Step 4: Display remaining piles
     print("\n--- Remaining Piles ---")
