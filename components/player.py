@@ -1,66 +1,113 @@
 from collections import defaultdict
 
-
 class Player:
-    def __init__(self, name):
+    def __init__(self, name, is_first=False):
+        """
+        Initialize a Player with a name and optional privilege token(s) if they are first.
+        
+        :param name: The name of the player.
+        :param is_first: Boolean, True if this player is the first player.
+        """
         self.name = name
-        self.resources = defaultdict(int)  # e.g., {'gold': 10, 'wood': 5}
         self.tokens = defaultdict(int)  # Tokens the player owns
-        self.cards = []  # Cards in the player's hand
-        self.victory_points = 0  # Victory points the player has earned
-        self.active_effects = []  # Active effects or abilities
+        self.privilege_tokens = 3 if is_first else 0  # Privilege tokens (max 3 for the first player)
+        self.cards = []  # Cards in the player's hand (general cards)
+        self.jewel_cards = []  # Cards specifically representing jewels
+        self.prestige_cards = []  # Cards specifically representing prestige
         self.crowns = 0  # Number of crowns owned by the player
-        self.actions_taken = []  # Track actions in a turn
-        self.max_actions_per_turn = 3  # Limit actions per turn
 
     def __str__(self):
-        return f"Player: {self.name}, Victory Points: {self.victory_points}, Resources: {dict(self.resources)}"
-
-    def add_resource(self, resource, quantity):
-        """Add resources to the player's pool."""
-        self.resources[resource] += quantity
-        print(f"{self.name} gained {quantity} {resource}(s). Total: {self.resources[resource]}.")
-
-    def spend_resource(self, resource, quantity):
-        """Spend resources if available."""
-        if self.resources[resource] >= quantity:
-            self.resources[resource] -= quantity
-            print(f"{self.name} spent {quantity} {resource}(s). Remaining: {self.resources[resource]}.")
-        else:
-            print(f"{self.name} does not have enough {resource} to spend.")
+        return (
+            f"Player: {self.name}, Tokens: {dict(self.tokens)}, "
+            f"Privilege Tokens: {self.privilege_tokens}, Crowns: {self.crowns}"
+        )
 
     def add_token(self, token, quantity):
         """Add tokens to the player's pool."""
         self.tokens[token] += quantity
+        print(f"{self.name} gained {quantity} {token} token(s). Total: {self.tokens[token]}.")
 
-    def play_card(self, card):
-        """Play a card from the player's hand."""
-        if card in self.cards:
-            self.cards.remove(card)
-            print(f"{self.name} played the card: {card}.")
-            return card
+    def use_privilege_token(self):
+        """Use a privilege token if available."""
+        if self.privilege_tokens > 0:
+            self.privilege_tokens -= 1
+            print(f"{self.name} used a privilege token. Remaining: {self.privilege_tokens}.")
         else:
-            print(f"{self.name} does not have that card.")
-            return None
+            print(f"{self.name} has no privilege tokens left to use.")
 
-    def take_action(self, action):
-        """Perform an action."""
-        if len(self.actions_taken) < self.max_actions_per_turn:
-            self.actions_taken.append(action)
-            print(f"{self.name} performed the action: {action}.")
+    def add_card(self, card, card_type="general"):
+        """
+        Add a card to the player's collection.
+        :param card: The card to add.
+        :param card_type: The type of card ("general", "jewel", or "prestige").
+        """
+        if card_type == "jewel":
+            self.jewel_cards.append(card)
+        elif card_type == "prestige":
+            self.prestige_cards.append(card)
         else:
-            print(f"{self.name} has reached the action limit for this turn.")
+            self.cards.append(card)
+        print(f"{self.name} acquired a {card_type} card: {card}.")
 
     def end_turn(self):
-        """Reset player state at the end of their turn."""
-        self.actions_taken.clear()
+        """Indicate the end of the player's turn."""
         print(f"{self.name}'s turn has ended.")
 
-    def gain_victory_points(self, points):
-        """Add victory points to the player."""
-        self.victory_points += points
-        print(f"{self.name} gained {points} victory points. Total: {self.victory_points}.")
+    def calculate_crowns(self):
+        """
+        Calculate crowns by summing the crowns from all jewel cards.
+        """
+        total_crowns = sum(card.get("crowns", 0) for card in self.jewel_cards)
+        self.crowns = total_crowns
+        print(f"{self.name} recalculated crowns: {self.crowns}.")
+        return self.crowns
 
-    def check_win_condition(self, victory_points_needed):
-        """Check if the player meets the win condition."""
-        return self.victory_points >= victory_points_needed
+    def calculate_prestige(self):
+        """
+        Calculate prestige points by summing points from jewel and prestige cards.
+        """
+        total_prestige = sum(card.get("points", 0) for card in self.jewel_cards)
+        total_prestige += sum(card.get("points", 0) for card in self.prestige_cards)
+        print(f"{self.name} recalculated prestige points: {total_prestige}.")
+        return total_prestige
+
+    def calculate_prestige_colors(self):
+        """
+        Calculate the highest sum of prestige points by output color across jewel cards.
+        Returns the maximum sum of any color's prestige points.
+        """
+        color_totals = defaultdict(int)
+        for card in self.jewel_cards:
+            output = card.get("output", {})
+            for color, value in output.items():
+                color_totals[color] += value
+
+        max_prestige_color_value = max(color_totals.values(), default=0)
+        print(f"{self.name}'s highest color prestige points: {max_prestige_color_value}.")
+        return max_prestige_color_value
+        
+    def check_win_condition(self):
+        """
+        Check if the player meets any of the win conditions:
+        - 10 or more crowns.
+        - 20 or more total prestige points.
+        - 10 or more points in any single prestige color.
+
+        Returns True if any condition is met, otherwise False.
+        """
+        crowns = self.calculate_crowns()
+        total_prestige = self.calculate_prestige()
+        max_prestige_color = self.calculate_prestige_colors()
+
+        if crowns >= 10:
+            print(f"{self.name} wins with {crowns} crowns!")
+            return True
+        elif total_prestige >= 20:
+            print(f"{self.name} wins with {total_prestige} prestige points!")
+            return True
+        elif max_prestige_color >= 10:
+            print(f"{self.name} wins with {max_prestige_color} prestige points in a single color!")
+            return True
+
+        print(f"{self.name} does not meet the win conditions yet.")
+        return False
