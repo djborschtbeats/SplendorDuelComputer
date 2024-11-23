@@ -25,15 +25,17 @@ class Card:
         def token_str(tokens: Optional[list[Token]]) -> str:
             return ", ".join(token.name for token in tokens) if tokens else "None"
 
-        return f"Card: " \
-               f"\tLevel: {self.level}" \
-               f"\tPoints: {self.points}, Crowns: {self.crowns}, \n" \
-               f"\tFeature: {self.feature} \n" \
-               f"\tRequirements: {token_str(self.requirements)} \n" \
+        return "Card: \n" \
+               f"\tLevel: {self.level}\n" \
+               f"\tPoints: {self.points}\n" \
+               f"\tCrowns: {self.crowns}\n" \
+               f"\tFeature: {self.feature}\n" \
+               f"\tRequirements: {token_str(self.requirements)}\n" \
                f"\tOutput: {token_str(self.output)}\n"
 
+    @staticmethod
     def parse_tokens(
-        self, token_quantities: Optional[dict[str, int]] = None
+        token_quantities: Optional[dict[str, int]] = None
     ) -> Optional[list[Token]]:
         """
         Parses a dict of token colors and quantities into a list of tokens.

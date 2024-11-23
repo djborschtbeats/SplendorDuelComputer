@@ -7,30 +7,62 @@ from components.card import Card
 
 class Deck:
     def __init__(self, card_spec_file_path: str) -> None:
-        self.deck: list[Card] = self.load_card_specs(card_spec_file_path)
-        self.piles: dict[int, list[Card]] = self.load_piles()
-        self.active_cards: dict[int, list[Card]] = {}
+        self.deck: list[Card] = self._load_card_specs(card_spec_file_path)
+        self.piles: dict[int, list[Card]] = self._load_piles()
+        self.active_cards: dict[int, list[Card]] = self._load_active_cards()
 
-    def load_card_specs(self, card_spec_file_path: str) -> list[Card]:
+    @staticmethod
+    def _load_card_specs(card_spec_file_path: str) -> list[Card]:
         """Parse cards and their properties from JSON file,"""
         with open(card_spec_file_path, "r") as file:
-            return [Card(**item) for item in json.load(file)]
+            return [Card(**item) for item in json.load(file)]  # todo: validate levels
 
-    def load_piles(self) -> dict[int, list[Card]]:
+    def _load_piles(self) -> dict[int, list[Card]]:
         """Shuffle cards and separate them into piles by level."""
         shuffle(self.deck)
         piles = defaultdict(list)
         for card in self.deck:
-            piles[card.level].append(card)  # TODO: validate level values
+            piles[card.level].append(card)
         return dict(piles)
 
-    # TODO: Clean up/add typehints from here on
-    def display_deck(self):
-        """Print all the cards in the deck"""
-        for card in self.deck:
+    def _load_active_cards(self) -> dict[int, list[Card]]:
+        """Deal playable cards to start per level"""
+        return {
+            level: [
+                self.piles[level].pop()
+                for _ in range(self._get_max_card_count(level))
+            ]
+            for level in self.piles.keys()
+        }
+
+    @staticmethod
+    def _get_max_card_count(level: int) -> int:
+        return 5 - level
+
+    @staticmethod
+    def display_cards(cards: list[Card]) -> None:
+        for card in cards:
             print(card)
 
-    def deal(self, level, num_cards):
+    def display_deck(self) -> None:
+        print("\n--- Deck ---\n")
+        self.display_cards(self.deck)
+
+    def display_piles(self) -> None:
+        print("\n--- Piles by Level ---\n")
+        for level, pile in self.piles.items():
+            print(f"Level {level}: {len(pile)} cards\n")
+            self.display_cards(pile)
+
+    def display_active_cards(self) -> None:
+        print("\n--- Active Cards by Level ---\n")
+        for level, cards in self.active_cards.items():
+            print(f"Level {level}: {len(cards)} cards\n")
+            self.display_cards(cards)
+
+    # TODO: Clean up/add typehints from here on
+    def replenish_card(self, level, num_cards):
+        # TODO: consolidate with pop
         """Deal a number of cards from the top of the pile of a specific level"""
         if level in self.piles and len(self.piles[level]) >= num_cards:
             dealt_cards = [self.piles[level].pop() for _ in range(num_cards)]
@@ -58,7 +90,5 @@ class Deck:
             print(f"No cards left in level {level}.")
             return None
 
-    def display_piles(self):
-        """Print the piles by level"""
-        for level, pile in self.piles.items():
-            print(f"Level {level}: {len(pile)} cards")
+
+

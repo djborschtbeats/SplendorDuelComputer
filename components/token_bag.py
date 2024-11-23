@@ -5,6 +5,7 @@ class TokenBag:
     def __init__(self) -> None:
         self.tokens: list[Token] = self._fill_with_tokens()
 
+    @staticmethod
     def _fill_with_tokens(self) -> list[Token]:
         tokens = []
         for t in Token:
