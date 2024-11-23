@@ -10,6 +10,7 @@ from secrets import randbelow
 from tqdm import tqdm
 import time
 
+
 def resolve_n_player(players, n):
     #This is extra security to prevent Alina from using the random() function because she can hack that. 
     print(f"Resolving who goes {n}...")
@@ -32,18 +33,14 @@ def resolve_n_player(players, n):
     # Step 5: Determine first player based on hash parity
     first_player_index = hash_value % len(players)
     first_player = players[first_player_index]
-    
-    # Step 6: Unbearable pause 
-    # Progress bar before revealing
-    for _ in tqdm(range(100), desc="Progress", ascii=" █", ncols=50):
-        time.sleep(0.02)  # Simulate processing time
 
     print(f"{first_player.name}")
     return first_player
 
+
 class Game:
     def __init__(self, card_spec_file_path: str = "../resources/deck/deck.json"):
-        self.player_count = 2
+        self.player_count = 4
         self.players = self.add_players()
         self.deck = Deck(card_spec_file_path)
         self.token_bag = TokenBag()
@@ -59,15 +56,18 @@ class Game:
         print("Shuffling ")
         players = self.resolve_player_order(players)
         print(f"Players: {', '.join([player.name for player in players])}")
-        # TODO: resolve first player
         return players
 
-    def resolve_player_order(self, players):
+    def resolve_player_order(self, players: list[Player]) -> list[Player]:
         player_order_list = []
-        while len(player_order_list) < self.player_count: 
+
+        # Step 6: Unbearable pause
+        # Progress bar before revealing
+        while len(player_order_list) < self.player_count:
             player = resolve_n_player(players, len(player_order_list)+1)
             if player not in player_order_list: 
                 player_order_list.append(player)
+                time.sleep(0.5)
         return player_order_list
 
     def player_turn(self, context):

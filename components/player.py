@@ -1,17 +1,15 @@
 from collections import defaultdict
 
+from components.card import Card
+from components.t0ken import Token
+
+
 class Player:
-    def __init__(self, name, is_first=False):
-        """
-        Initialize a Player with a name and optional privilege token(s) if they are first.
-        
-        :param name: The name of the player.
-        :param is_first: Boolean, True if this player is the first player.
-        """
-        self.name = name
-        self.tokens = defaultdict(int)  # Tokens the player owns
-        self.privilege_tokens = 3 if is_first else 0  # Privilege tokens (max 3 for the first player)
-        self.cards = []  # Cards in the player's hand (general cards)
+    def __init__(self, name: str) -> None:
+        self.name: str = name
+        self.tokens: list[Token] = []
+        self.privileges: int = 0
+        self.cards: list[Card] = []  # Cards in the player's hand (general cards)
         self.jewel_cards = []  # Cards specifically representing jewels
         self.prestige_cards = []  # Cards specifically representing prestige
         self.crowns = 0  # Number of crowns owned by the player
@@ -19,7 +17,7 @@ class Player:
     def __str__(self):
         return (
             f"Player: {self.name}, Tokens: {dict(self.tokens)}, "
-            f"Privilege Tokens: {self.privilege_tokens}, Crowns: {self.crowns}"
+            f"Privilege Tokens: {self.privileges}, Crowns: {self.crowns}"
         )
 
     def add_token(self, token, quantity):
@@ -29,9 +27,9 @@ class Player:
 
     def use_privilege_token(self):
         """Use a privilege token if available."""
-        if self.privilege_tokens > 0:
-            self.privilege_tokens -= 1
-            print(f"{self.name} used a privilege token. Remaining: {self.privilege_tokens}.")
+        if self.privileges > 0:
+            self.privileges -= 1
+            print(f"{self.name} used a privilege token. Remaining: {self.privileges}.")
         else:
             print(f"{self.name} has no privilege tokens left to use.")
 

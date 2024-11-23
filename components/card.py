@@ -3,6 +3,10 @@ from typing import Optional
 
 from components.t0ken import Token
 
+# TODO: Card base class with points and feature only
+# TODO: PrestigeCard class that inherits from base class
+# TODO: JewelCard class that inherits from base class and adds the additional attrs
+
 
 class Card:
     def __init__(
