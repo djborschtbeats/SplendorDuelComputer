@@ -10,6 +10,36 @@ from secrets import randbelow
 from tqdm import tqdm
 import time
 
+def resolve_n_player(players, n):
+    #This is extra security to prevent Alina from using the random() function because she can hack that. 
+    print(f"Resolving who goes {n}...")
+
+    # Step 1: Get the current day of the year and approximate moon phase
+    today = datetime.date.today()
+    day_of_year = today.timetuple().tm_yday
+    moon_phase = day_of_year % 30  # Approximate moon phase (0-29)
+
+    # Step 2: Use the length of the players' names as entropy
+    name_lengths = [len(player.name) for player in players]
+
+    # Step 3: Add cryptographic randomness
+    crypto_random = randbelow(100)
+
+    # Step 4: Create a weird hash
+    seed_string = f"{today}-{moon_phase}-{name_lengths}-{crypto_random}"
+    hash_value = int(hashlib.sha256(seed_string.encode()).hexdigest(), 16)
+
+    # Step 5: Determine first player based on hash parity
+    first_player_index = hash_value % len(players)
+    first_player = players[first_player_index]
+    
+    # Step 6: Unbearable pause 
+    # Progress bar before revealing
+    for _ in tqdm(range(100), desc="Progress", ascii=" █", ncols=50):
+        time.sleep(0.02)  # Simulate processing time
+
+    print(f"{first_player.name}")
+    return first_player
 
 class Game:
     def __init__(self, card_spec_file_path: str = "../resources/deck/deck.json"):
@@ -27,41 +57,18 @@ class Game:
             ) for i in range(self.player_count)
         ]
         print("Shuffling ")
+        players = self.resolve_player_order(players)
         print(f"Players: {', '.join([player.name for player in players])}")
         # TODO: resolve first player
         return players
 
-    def resolve_first_player(self):
-        #This is extra security to prevent Alina from using the random() function because she can hack that. 
-        print("Resolving who goes first...")
-
-        # Step 1: Get the current day of the year and approximate moon phase
-        today = datetime.date.today()
-        day_of_year = today.timetuple().tm_yday
-        moon_phase = day_of_year % 30  # Approximate moon phase (0-29)
-
-        # Step 2: Use the length of the players' names as entropy
-        name_lengths = [len(player.name) for player in self.players]
-
-        # Step 3: Add cryptographic randomness
-        crypto_random = randbelow(100)
-
-        # Step 4: Create a weird hash
-        seed_string = f"{today}-{moon_phase}-{name_lengths}-{crypto_random}"
-        hash_value = int(hashlib.sha256(seed_string.encode()).hexdigest(), 16)
-
-        # Step 5: Determine first player based on hash parity
-        first_player_index = hash_value % len(self.players)
-        first_player = self.players[first_player_index]
-        
-        # Step 6: Unbearable pause 
-        # Progress bar before revealing
-        print("\nCalculating who goes first...")
-        for _ in tqdm(range(100), desc="Progress", ascii=" █", ncols=50):
-            time.sleep(0.02)  # Simulate processing time
-
-        print(f"{first_player.name} will go first.")
-        return first_player
+    def resolve_player_order(self, players):
+        player_order_list = []
+        while len(player_order_list) < self.player_count: 
+            player = resolve_n_player(players, len(player_order_list)+1)
+            if player not in player_order_list: 
+                player_order_list.append(player)
+        return player_order_list
 
     def player_turn(self, context):
         """Handle the turn logic for the current player."""
