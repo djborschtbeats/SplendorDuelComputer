@@ -6,10 +6,10 @@ from token_board import TokenBoard
 
 
 def visualize_token_board(token_board: TokenBoard) -> None:
-    # Plot a color grid representing the board and its tokens.
+    # Plot a color grid representing the board fields (2d list) and their tokens.
     # Convert each token's hex color to the corresponding RGB tuple
     # expected by matplotlib. Fill in fields without a token as gray.
-    color_grid = [
+    color_grid: list[list[tuple[float, float, float]]] = [
         [
             _hex_to_rgb(getattr(getattr(field, "token", None), "value", "#808080"))
             for field in row
@@ -42,5 +42,5 @@ def visualize_token_board(token_board: TokenBoard) -> None:
     plt.show()
 
 
-def _hex_to_rgb(hex_color: str) -> tuple:
+def _hex_to_rgb(hex_color: str) -> tuple[float, float, float]:
     return mcolors.hex2color(hex_color)
