@@ -12,7 +12,7 @@ class TokenBag:
             if t == Token.purple:
                 tokens.extend([t] * 2)  # add 2 purple tokens
             elif t == Token.gold:
-                tokens.extend([t] * 3)  # add 3 yellow tokens
+                tokens.extend([t] * 3)  # add 3 gold tokens
             else:
                 tokens.extend([t] * 4)  # add 4 tokens for other colors
         return tokens

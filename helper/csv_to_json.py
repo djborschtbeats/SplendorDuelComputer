@@ -39,12 +39,12 @@ def convert_csv_to_json(csv_file):
 
             # Construct JSON object
             item = {
-                "Level": int(row['Level']),
-                "Points": int(row['Points']),
-                "Feature": row['Feature'],
-                "Requirements": requirements,
-                "Output": output,
-                "Crowns": int(row['Crowns'])
+                "level": int(row['Level']),
+                "points": int(row['Points']),
+                "feature": row['Feature'],
+                "requirements": requirements,
+                "output": output,
+                "crowns": int(row['Crowns'])
             }
             result.append(item)
 
